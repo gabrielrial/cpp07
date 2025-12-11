@@ -3,18 +3,28 @@
 
 #include <iostream>
 
-class Array {
+template <typename T>
+class Array
+{
 public:
-    Array();
-    Array(unsigned int n);
+	Array();
+	Array(unsigned int n);
+	Array(const Array &other);
+	Array &operator=(const Array &other);
 
-    Array(const Array& other);
-    Array& operator=(const Array& other);
-    ~Array();
+	T &operator[](unsigned int i);
+	const T &operator[](unsigned int i) const;
+
+	~Array();
+
+	unsigned int size() const;
 
 private:
-    
+	T *_data;
+	unsigned int _size;
 };
-std::ostream &operator<<(std::ostream &os, const Array &Array);
+// std::ostream &operator<<(std::ostream &os, const Array &Array);
+
+#include "Array.tpp"
 
 #endif
