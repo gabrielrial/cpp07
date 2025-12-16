@@ -2,6 +2,7 @@
 #define ARRAY_HPP
 
 #include <iostream>
+#include <cstdlib>
 
 template <typename T>
 class Array
@@ -13,7 +14,7 @@ public:
 	Array &operator=(const Array &other);
 
 	T &operator[](unsigned int i);
-	const T &operator[](unsigned int i) const;
+	const T& operator[](unsigned int i) const;
 
 	~Array();
 
